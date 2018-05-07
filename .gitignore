@@ -1,0 +1,4 @@
+# Excludes compiled files
+orderedPrinter/*.class
+unorderedPrinter/*.class
+
