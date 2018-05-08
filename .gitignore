@@ -2,3 +2,7 @@
 orderedPrinter/*.class
 unorderedPrinter/*.class
 
+# Excludes IDE files
+.project
+.classpath
+
