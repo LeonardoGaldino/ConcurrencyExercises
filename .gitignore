@@ -1,6 +1,7 @@
 # Excludes compiled files
 orderedPrinter/*.class
 unorderedPrinter/*.class
+concurrentCounter/*.class
 
 # Excludes IDE files
 .project
