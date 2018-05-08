@@ -2,8 +2,8 @@ package unorderedPrinter;
 
 public class Printer implements Runnable {
 	
-	int start;
-	int end;
+	private int start;
+	private int end;
 	
 	public Printer(int start, int end) {
 		this.start = start;

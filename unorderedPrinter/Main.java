@@ -40,7 +40,7 @@ public class Main {
 			try {
 				thread.join();
 			} catch (InterruptedException e) {
-				System.out.println("Thread interrupted.");
+				e.getStackTrace();
 			}
 		}
 		

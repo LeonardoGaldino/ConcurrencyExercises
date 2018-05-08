@@ -2,7 +2,7 @@ package orderedPrinter;
 
 public class Printer implements Runnable {
 
-	NumberFactory numberFactory;
+	public NumberFactory numberFactory;
 
 	public Printer(NumberFactory numberFactory) {
 		this.numberFactory = numberFactory;

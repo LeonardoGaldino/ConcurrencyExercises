@@ -2,9 +2,9 @@ package orderedPrinter;
 
 public class NumberFactory {
 
-	int start;
-	int end;
-	int current;
+	private int start;
+	private int end;
+	private int current;
 
 	public NumberFactory(int start, int end) {
 		this.start = this.current = start;
