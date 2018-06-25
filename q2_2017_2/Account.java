@@ -11,15 +11,23 @@ public class Account {
 	}
 	
 	public boolean withdraw(int amount, int tid) {
-		int curBalance = this.balance.get();
-		if(curBalance >= amount) {
-			this.balance.compareAndSet(curBalance, curBalance-amount);
-			System.out.println(tid + ": Success to withdraw " + amount + " | Balance : " + this.balance.get());
-			return true;
+		while(true) {
+			int curBalance = this.balance.get();
+			if(curBalance >= amount) {
+				boolean succeed = this.balance.compareAndSet(curBalance, curBalance-amount);
+				if(succeed) {
+					System.out.println(tid + ": Success to withdraw " + amount + " | Balance : " + this.balance.get());
+					return true;
+				} else {
+					// value was updated before writing
+					// try again
+					continue;
+				}
+			}
+			System.out.println(tid + ": Failed to withdraw " +amount + " | Balance : " + this.balance.get());
+			// Not enough cash to withdraw
+			return false;
 		}
-		System.out.println(tid + ": Failed to withdraw " +amount + " | Balance : " + this.balance.get());
-		// Not enough cash to withdraw
-		return false;
 	}
 	
 	public void deposit(int value, int tid) {

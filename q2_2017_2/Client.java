@@ -38,7 +38,7 @@ public class Client implements Runnable {
 			this.randomSleep();
 			int action = depositOrWithdraw();
 			if(action == this.DEPOSIT)
-				this.account.deposit(Math.max(0, this.randomValue()-800), this.tid);
+				this.account.deposit(this.randomValue(), this.tid);
 			else if(action == this.WITHDRAW)
 				this.account.withdraw(this.randomValue(), this.tid);
 			
